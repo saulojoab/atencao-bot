@@ -10,3 +10,9 @@ Um bot no twitter que dá atenção pras pessoas violentamente. Eu nem sei porqu
 4 - Crie um app, o Twitter vai te dar as credenciais.<br>
 5 - Crie um arquivo Json chamado 'config.json' e coloque suas credenciais nele.<br>
 6 - Pronto! :joy:
+
+## To-do! :calendar:
+- Melhorar sistema de buscas.<br>
+- Criar uma forma de dar query de tweets.<br>
+- Mandar imagens de biscoito<br>
+- Responder tweets que usarem certas key-words (pra divulgar o bot).
