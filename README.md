@@ -8,4 +8,4 @@ Um bot no twitter que dá atenção pras pessoas violentamente. Eu nem sei porqu
 3 - Crie sua conta de dev.<br>
 4 - Crie um app, o Twitter vai te dar as credenciais.<br>
 5 - Crie um arquivo Json chamado 'config.json' e coloque suas credenciais nele.<br>
-6 - Pronto! :joy"
+6 - Pronto! :joy:
