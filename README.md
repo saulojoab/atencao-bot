@@ -12,6 +12,7 @@ Um bot no twitter que dá atenção pras pessoas violentamente. Eu nem sei porqu
 6 - Pronto! :joy:
 
 ## To-do! :calendar:
+- Fazer ele não responder à RT's<br>
 - Melhorar sistema de buscas.<br>
 - Criar uma forma de dar query de tweets.<br>
 - Mandar imagens de biscoito<br>
