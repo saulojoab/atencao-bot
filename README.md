@@ -1,6 +1,7 @@
 # Atenção Bot
 Um bot no twitter que dá atenção pras pessoas violentamente. Eu nem sei porquê criei isso.
-### <a href="http://twitter.com/atencao_bot">Brinque com ele!</a>
+### <a href="http://twitter.com/atencao_bot">Brinque com ele!</a><br>
+Biblioteca utilizada: <a href="http://www.tweepy.org">Tweepy</a>!
 
 ## Como recriar credenciais/API keys? :thinking:
 
