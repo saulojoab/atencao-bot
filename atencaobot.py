@@ -8,7 +8,7 @@ import json
 def cnt_word(s, w):
     return f' {w} ' in f' {s} '
 
-async def verifyIDs(id):
+def verifyIDs(id):
     file = open("tweetIDS.txt").readlines();
     idList = file[0].split(",");
 
@@ -79,29 +79,37 @@ lastTweet = "";
 t = Thread(target=followingPeople, args=(1,));
 t.start();
 
-while True:
-    twitter_rates();
+async def main():
+    while True:
+        twitter_rates();
 
-    f = open("tweetIDS.txt", "a+")
+        f = open("tweetIDS.txt", "a+")
 
-    print("\n========\nsleeping...\n=======\n");
+        print("\n========\nsleeping...\n=======\n");
 
-    time.sleep(5);
+        time.sleep(5);
 
-    print("Searching...");
-    results = api.search(q="@atencao_bot", count=5);
-    print("SEARCH SUCESSFUL!");
+        print("Searching...");
+        results = api.search(q="@atencao_bot", count=5);
+        print("SEARCH SUCESSFUL!");
 
-    if (asyncio.run(verifyIDs(results[0].id))):
-        print("Already replied to that tweet!");
-        print(results[0].id);
-        print("=======");
-        print("\n");
-    else:
-        print("@" + results[0].user.screen_name + " - " + results[0].text + "\n\n");
+        if (results.__len__() > 0):
+            if (verifyIDs(results[0].id)):
+                print("Already replied to that tweet!");
+                print(results[0].id);
+                print("=======");
+                print("\n");
+            else:
+                print("@" + results[0].user.screen_name + " - " + results[0].text + "\n\n");
 
-        api.update_status("@" + results[0].user.screen_name + " " + frases[random.randint(0, len(frases) - 1)] + " (x" + str(random.randint(0,100000)) + ")", in_reply_to_status_id=results[0].id);
-        f.write(str(results[0].id)+",");
-        f.close();
-        print("=======");
-        print("\n");
+                api.update_status("@" + results[0].user.screen_name + " " + frases[random.randint(0, len(frases) - 1)] + " (x" + str(random.randint(0,100000)) + ")", in_reply_to_status_id=results[0].id);
+                f.write(str(results[0].id)+",");
+                f.close();
+                print("=======");
+                print("\n");
+        else:
+            print("No tweets were found!");
+            print("=======");
+            print("\n");
+
+asyncio.run(main());
